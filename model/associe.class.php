@@ -7,10 +7,10 @@ class associe
 	private $idPhrase;
 	private $idChoix;
 	
-	function __construct($idPhrase,$idChoix)
+	function __construct($idPhrase=null,$idChoix=null)
 	{
-		$this->idPhrase = $idPhrase;
-		$this->idChoix = $idChoix;
+		if($idPhrase)$this->idPhrase = $idPhrase;
+		if($idChoix)$this->idChoix = $idChoix;
 	}
 
 	///////////////////////
@@ -34,7 +34,7 @@ class associe
      *
      * @return self
      */
-    private function setIdChoix($idChoix)
+    public function setIdChoix($idChoix)
     {
         $this->idChoix = $idChoix;
 
@@ -58,7 +58,7 @@ class associe
      *
      * @return self
      */
-    private function setIdPhrase($idPhrase)
+    public function setIdPhrase($idPhrase)
     {
         $this->idPhrase = $idPhrase;
 

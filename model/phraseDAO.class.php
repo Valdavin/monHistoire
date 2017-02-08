@@ -1,6 +1,6 @@
 <?php
 require_once("phrase.class.php");
-require_once("choix.class.php")
+require_once("choix.class.php");
 require_once("DAO.class.php");
 
 class phraseDAO {
@@ -24,7 +24,7 @@ class phraseDAO {
 	function getPhraseById($idPhrase) {
 		$req = "SELECT * FROM `phrase` WHERE `idPhrase` = '$idPhrase';";
 		$res = $this->db->query($req);
-		$phrase = $res->fetchAll(PDO::FETCH_CLASS, "phrase",array('idPhrase','idRandomPhrase','intitulePhrase'));
+		$phrase = $res->fetchAll(PDO::FETCH_CLASS, "phrase");
 		if ($phrase) {
 			return $phrase[0];
 		} else {
@@ -35,7 +35,7 @@ class phraseDAO {
 	function getPhraseByIdRandom($idRandomPhrase) {
 		$req = "SELECT * FROM `phrase` WHERE `idRandomPhrase` = '$idRandomPhrase';";
 		$res = $this->db->query($req);
-		$phrase = $res->fetchAll(PDO::FETCH_CLASS, "phrase",array('idPhrase','idRandomPhrase','intitulePhrase'));
+		$phrase = $res->fetchAll(PDO::FETCH_CLASS, "phrase");
 		if ($phrase) {
 			return $phrase[0];
 		} else {

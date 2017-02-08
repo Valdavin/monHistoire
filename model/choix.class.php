@@ -10,12 +10,12 @@ class choix
     private $intituleChoix;
     private $envoisVers;
 	
-	function __construct($idChoix,$idRandomChoix,$intituleChoix,$envoisVers)
+	function __construct($idChoix=null,$idRandomChoix=null,$intituleChoix=null,$envoisVers=null)
 	{
-		$this->idChoix = $idChoix;
-		$this->idRandomChoix = $idRandomChoix;
-        $this->intituleChoix = $intituleChoix;
-        $this->envoisVers = $envoisVers;
+		if($idChoix)$this->idChoix = $idChoix;
+		if($idRandomChoix)$this->idRandomChoix = $idRandomChoix;
+        if($intituleChoix)$this->intituleChoix = $intituleChoix;
+        if($envoisVers)$this->envoisVers = $envoisVers;
 	}
 
 	///////////////////////
@@ -41,7 +41,7 @@ class choix
      *
      * @return self
      */
-    private function setIdChoix($idChoix)
+    public function setIdChoix($idChoix)
     {
         $this->idChoix = $idChoix;
 
@@ -65,7 +65,7 @@ class choix
      *
      * @return self
      */
-    private function setIdRandomChoix($idRandomChoix)
+    public function setIdRandomChoix($idRandomChoix)
     {
         $this->idRandomChoix = $idRandomChoix;
 
@@ -89,7 +89,7 @@ class choix
      *
      * @return self
      */
-    private function setIntituleChoix($intituleChoix)
+    public function setIntituleChoix($intituleChoix)
     {
         $this->intituleChoix = $intituleChoix;
 
@@ -113,7 +113,7 @@ class choix
      *
      * @return self
      */
-    private function setEnvoisVers($envoisVers)
+    public function setEnvoisVers($envoisVers)
     {
         $this->envoisVers = $envoisVers;
 

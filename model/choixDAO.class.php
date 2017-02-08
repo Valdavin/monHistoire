@@ -24,7 +24,7 @@ class choixDAO {
 		$req = "SELECT * FROM `choix` WHERE `idchoix` = '$idchoix';";
 		$res = $this->db->query($req);
 		//var_dump($res->fetchAll());
-		$choix = $res->fetchAll(PDO::FETCH_CLASS, "choix", array('idChoix','idRandomChoix','intituleChoix','envoisVers'));
+		$choix = $res->fetchAll(PDO::FETCH_CLASS, "choix");
 		if ($choix) {
 			return $choix[0];
 		} else {
@@ -35,7 +35,7 @@ class choixDAO {
 	function getchoixByIdRandom($idRandomchoix) {
 		$req = "SELECT * FROM `choix` WHERE `idRandomchoix` = '$idRandomchoix';";
 		$res = $this->db->query($req);
-		$choix = $res->fetchAll(PDO::FETCH_CLASS, "choix", array('idChoix','idRandomChoix','intituleChoix','envoisVers'));
+		$choix = $res->fetchAll(PDO::FETCH_CLASS, "choix");
 		if ($choix) {
 			return $choix[0];
 		} else {
@@ -67,12 +67,12 @@ class choixDAO {
 
     function update($choix)
     {
-    	$idchoix = $choix->getIdchoix();
+    	$idchoix = $choix->getIdChoix();
 		$idRandomchoix = addslashes($choix->getIdRandomchoix());
 		$intitulechoix=addslashes($choix->getIntitulechoix());
 		$envoisVers=addslashes($choix->getEnvoisVers());
 		
-		if ($this->getchoixById($getIdchoix)) {
+		if ($this->getchoixById($idchoix)) {
 			
 			$req = "UPDATE `choix` SET
 				idRandomchoix='$idRandomchoix',

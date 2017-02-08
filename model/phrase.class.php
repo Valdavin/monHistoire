@@ -8,11 +8,11 @@ class phrase
 	private $idRandomPhrase;
     private $intitulePhrase;
 	
-	function __construct($idPhrase,$idRandomPhrase,$intitulePhrase)
+	function __construct($idPhrase=null,$idRandomPhrase=null,$intitulePhrase=null)
 	{
-		$this->idPhrase = $idPhrase;
-		$this->idRandomPhrase = $idRandomPhrase;
-        $this->intitulePhrase = $intitulePhrase;
+		if($idPhrase)$this->idPhrase = $idPhrase;
+		if($idRandomPhrase)$this->idRandomPhrase = $idRandomPhrase;
+        if($intitulePhrase)$this->intitulePhrase = $intitulePhrase;
 
 	}
 
@@ -39,7 +39,7 @@ class phrase
      *
      * @return self
      */
-    private function setIdPhrase($idPhrase)
+    public function setIdPhrase($idPhrase)
     {
         $this->idPhrase = $idPhrase;
 
@@ -63,7 +63,7 @@ class phrase
      *
      * @return self
      */
-    private function setIdRandomPhrase($idRandomPhrase)
+    public function setIdRandomPhrase($idRandomPhrase)
     {
         $this->idRandomPhrase = $idRandomPhrase;
 
@@ -87,7 +87,7 @@ class phrase
      *
      * @return self
      */
-    private function setIntitulePhrase($intitulePhrase)
+    public function setIntitulePhrase($intitulePhrase)
     {
         $this->intitulePhrase = $intitulePhrase;
 

@@ -23,7 +23,7 @@ class associeDAO {
 	function getassocieByIdPhrase($idphrase) {
 		$req = "SELECT * FROM `associe` WHERE `idphrase` = '$idphrase';";		
 		$res = $this->db->query($req);
-		$associe = $res->fetchAll(PDO::FETCH_CLASS, "associe", array('idPhrase','idChoix'));
+		$associe = $res->fetchAll(PDO::FETCH_CLASS, "associe");
 		if ($associe) {
 			return $associe[0];
 		} else {
@@ -34,7 +34,7 @@ class associeDAO {
 	function getassocieByIdChoix($idchoix) {
 		$req = "SELECT * FROM `associe` WHERE `idchoix` = '$idchoix';";
 		$res = $this->db->query($req);
-		$associe = $res->fetchAll(PDO::FETCH_CLASS, "associe", array('idPhrase','idChoix'));
+		$associe = $res->fetchAll(PDO::FETCH_CLASS, "associe");
 
 		if ($associe) {
 			return $associe[0];
